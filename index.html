@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        background-color: #121212;
+        color: white;
+      }
+      .row {
+        padding: 1vh 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .el {
+        margin: 19px;
+      }
+      .subtitle {
+        font-family: "Open Sans", verdana, arial, sans-serif;
+        font-size: 15px;
+        color: rgb(68, 68, 68);
+        opacity: 1;
+        font-weight: normal;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="graph"></div>
+    <p class="subtitle">Gradient descent, Activation Sigmoid, Data random normal distribution with offset of 1.5</p>
+    <p class="subtitle">Mono thread at 3.30 GHz</p>
+    <div class="row">
+      <div class="el">
+        <button id="nextEpoch">next_epoch</button>
+      </div>
+      <div class="el">
+        <button id="resetDatas">reset_datas_training</button>
+      </div>
+      <div class="el">
+        <button id="resetDatasTest">reset_datas_test</button>
+      </div>
+      <div class="el">
+        <button id="resetNeuron">reset_neuron</button>
+      </div>
+      <div class="el">
+        <button id="resetAll">reset_all</button>
+      </div>
+      <div class="el">
+        <button id="updateOutput">update_output</button>
+      </div>
+      <div class="el">
+        <button id="startEpochAuto">start_epoch_auto</button>
+      </div>
+      <div class="el">
+        <button id="stopEpochAuto">stop_epoch_auto</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="el">
+        <label for="learningRate">learning_rate</label>
+        <input type="number" name="learningRate" id="learningRate" value="0.1" />
+        <button id="learningRateBtn">valid</button>
+      </div>
+      <div class="el">
+        <label for="addEpoch">add_epoch</label>
+        <input type="number" name="addEpoch" id="addEpoch" value="1" />
+        <button id="addEpochBtn">valid</button>
+      </div>
+      <div class="el">
+        <label for="nbData">nb_data_training</label>
+        <input type="number" name="nbData" id="nbData" value="100" />
+        <button id="nbDataBtn">valid</button>
+      </div>
+      <div class="el">
+        <label for="nbDataTest">nb_data_test</label>
+        <input type="number" name="nbDataTest" id="nbDataTest" value="50" />
+        <button id="nbDataTestBtn">valid</button>
+      </div>
+      <div class="el">
+        <label for="densityYHeatmap">density_y_heatmap</label>
+        <input type="number" name="densityYHeatmap" id="densityYHeatmap" value="0.05" />
+        <button id="densityYHeatmapBtn">valid</button>
+      </div>
+      <div class="el">
+        <label for="waitAfterEpoch">wait_after_epoch_ms</label>
+        <input type="number" name="waitAfterEpoch" id="waitAfterEpoch" value="0" />
+        <button id="waitAfterEpochBtn">valid</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="el">
+        <label for="weight1">weight1</label>
+        <input type="text" name="weight1" id="weight1" />
+      </div>
+      <div class="el">
+        <label for="weight2">weight2</label>
+        <input type="text" name="weight2" id="weight2" />
+      </div>
+      <div class="el">
+        <label for="bias">bias</label>
+        <input type="text" name="bias" id="bias" />
+      </div>
+      <div class="el">
+        <label for="epochs">epochs</label>
+        <input type="text" name="epochs" id="epochs" readonly />
+        <button id="weightsBiasBtn">valid_weights_bias</button>
+      </div>
+      <div class="el">
+        <label for="timer">timer_ms</label>
+        <input type="text" name="timer" id="timer" readonly />
+      </div>
+      <div class="el">
+        <label for="timeEpoch">time_epoch_avg_ms</label>
+        <input type="text" name="timeEpoch" id="timeEpoch" readonly />
+      </div>
+      <div class="el">
+        <label for="accuracyTrainingSet">accuracy_training_set</label>
+        <input type="text" name="accuracyTrainingSet" id="accuracyTrainingSet" readonly />
+      </div>
+      <div class="el">
+        <label for="costTrainingSet">cost_training_set</label>
+        <input type="text" name="costTrainingSet" id="costTrainingSet" readonly />
+      </div>
+      <div class="el">
+        <label for="accuracyTestSet">accuracy_test_set</label>
+        <input type="text" name="accuracyTestSet" id="accuracyTestSet" readonly />
+      </div>
+      <div class="el">
+        <label for="costTestSet">cost_test_set</label>
+        <input type="text" name="costTestSet" id="costTestSet" readonly />
+      </div>
+    </div>
+  </body>
+  <script src="dist/bundle.js"></script>
+</html>
